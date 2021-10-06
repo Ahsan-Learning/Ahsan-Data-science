@@ -1,0 +1,355 @@
+$(document).ready(function(){
+    $( document ).on( 'focus', ':input', function(){
+        $( this ).attr( 'autocomplete', 'off' );
+		
+    });
+});
+function  Open_model(model_id,model_body_id,pageloading,id,modal_title,modal_titel_id,size){
+	
+	if(size=='larg'){
+	$("#modal-size").addClass('modal-lg');
+	}
+	$("#"+model_id).modal({
+        show: false,
+        backdrop: 'static',keyboard: false
+    });
+	
+	if(pageloading=='EduPages/Addlesson_questions_dtl'){  cid = $('#cousre_id').val(); id = cid+','+id; }// only in
+	if(pageloading=='EduPages/Addlesson'){  cid = $('#cousre_id').val(); id = cid+','+id; }// only in
+	
+		
+		
+	
+	
+	$("#"+model_id).modal('toggle');
+	$("#"+modal_titel_id).html(modal_title);
+	$("#"+model_body_id).html('<div align="center"><div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"></div></div>');
+	$("#"+model_body_id).load(pageloading+'?id='+encodeURIComponent(id));
+	
+	//modal({backdrop: 'static', keyboard: false}) ; 
+	$(":input:first").focus(); 
+}
+
+function img_uplaod(id,btn,form_id,filename,ses_name,filed_num,file_id,validation){
+
+			//alert('adf');
+			$('#load_img_data'+id).html('<div align="center"><div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"></div></div>');
+			var rizwan=document.getElementById(form_id);
+			
+			//$("#").on('onChange',(function(e) {
+			var formData = new FormData();
+			formData.append(filename, $('input[type=file]')[filed_num].files[0]); 
+			//e.preventDefault();
+		//var ff = $('input[type=file]')[filed_num].files[0];
+		//console.log(ff.clientWidth);
+		//var  imgWidth = $("#"+file_id).width();
+		//var  heightt = $("#"+file_id).height();
+		//console.log(imgWidth);
+		//console.log(heightt);
+		//console.log(ff);
+		
+			$('#'+btn).prop('disabled', true);	
+			$.ajax({
+			type: "POST",
+			url: "includes/img_uplaod_dynamic?filename="+filename+'&ses_name='+ses_name+'&validation='+validation,
+			data: formData, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+			contentType: false,       // The content type used when sending data to the server.
+			cache: false,             // To unable request pages to be cached
+			processData:false,      
+			success: function(result){
+				//alert(result);
+				if(result==1){
+				$('#load_img_data'+id).load('includes/img_uplaod_dynamic?p=1&ses_name='+ses_name);
+				$('#'+btn).prop('disabled', false);
+				//$('#next').prop('disabled', false);
+				}else{
+				
+				$('#load_img_data'+id).html('<div style="color:red;">'+result+'</div>');
+				
+				}
+				
+			
+				
+               
+			  }
+		
+			  });
+			//}));
+		
+				
+}
+
+
+
+function uploadingProgressbar(id,btn,form_id,filename,ses_name,filed_num,file_id,validation,cancel_btn){
+
+			
+			
+			
+			$('#load_img_data'+id).html('<div align="center">Please wait uploading..<div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"><span id="uploading_bar"></span></div></div>');
+			var rizwan=document.getElementById(form_id);
+			
+			//$("#").on('onChange',(function(e) {
+			var formData = new FormData();
+			formData.append(filename, $('input[type=file]')[filed_num].files[0]); 
+			
+			var ff = $('input[type=file]')[filed_num].files[0];
+			//console.log();
+			fileName = ff.name;
+			fileExtension = fileName.replace(/^.*\./, '');
+			//console.log(fileExtension);
+			
+			var form = true;
+			var errors = '';
+			if(validation=='video'){
+					if(fileExtension!='mp4'){
+						form = false;
+						errors+='Only mp4 Video Format allow<br>';
+						}
+				
+				}
+			
+			
+			
+			if(form==true){
+			
+			
+		
+			$('#'+btn).prop('disabled', true);	
+			$('#'+cancel_btn).prop('disabled', true);
+			$('#'+file_id).prop('disabled', true);
+			
+			$.ajax({
+			type: "POST",
+			url: "includes/img_uplaod_dynamic_pro?filename="+filename+'&ses_name='+ses_name+'&validation='+validation,
+			data: formData, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+			contentType: false,       // The content type used when sending data to the server.
+			cache: false,             // To unable request pages to be cached
+			processData:false,
+			xhr        : function ()
+                {
+                    var jqXHR = null;
+                    if ( window.ActiveXObject )
+                    {
+                        jqXHR = new window.ActiveXObject( "Microsoft.XMLHTTP" );
+                    }
+                    else
+                    {
+                        jqXHR = new window.XMLHttpRequest();
+                    }
+                    //Upload progress
+                    jqXHR.upload.addEventListener( "progress", function ( evt )
+                    {
+                        if ( evt.lengthComputable )
+                        {
+                            var percentComplete = Math.round( (evt.loaded * 100) / evt.total );
+                            //Do something with upload progress
+                           // console.log( 'Uploaded percent', percentComplete );
+							$('#uploading_bar').html(percentComplete+'%');
+                        }
+                    }, false );
+                    //Download progress
+                    jqXHR.addEventListener( "progress", function ( evt )
+                    {
+                        if ( evt.lengthComputable )
+                        {
+                            var percentComplete = Math.round( (evt.loaded * 100) / evt.total );
+                            //Do something with download progress
+                            console.log( 'Downloaded percent', percentComplete );
+                        }
+                    }, false );
+                    return jqXHR;
+                },
+			success: function(result){
+				//alert(result);
+				var parts = result.split('##');
+				if(parts[0]==1){
+					$('#load_img_data'+id).html('<div style="color:green;" onClick=\DeleteAttechment('+id+',"load_errrors","'+parts[1]+'","'+btn+'","'+cancel_btn+'","'+file_id+'","'+ses_name+'")>Remove</div>');
+					
+					$('#'+btn).prop('disabled', false);
+					$('#'+cancel_btn).prop('disabled', false);	
+				}else{
+					
+					$('#'+btn).prop('disabled', false);
+					$('#'+cancel_btn).prop('disabled', false);	
+					$('#'+file_id).prop('disabled', false);
+				$('#load_img_data'+id).html('<div style="color:red;">'+result+'</div>');
+				
+				}
+				
+			
+				
+               
+			  }
+		
+			  });
+			//}));
+		}else{
+				$('#load_img_data'+id).html('<div style="color:red;">'+errors+'</div>');
+				
+				}
+				
+}
+
+
+function DeleteAttechment(id,error_load,file_name,btn,cancelbtn,file_id,session_name){
+			if(confirm("Are you sure want to remove this..?")){
+			$('#'+error_load).html('<div align="center">Removing<div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"></div></div>');
+			
+			$('#'+btn).prop('disabled', true);	
+			$('#'+cancelbtn).prop('disabled', true);	
+			
+			$.ajax({
+			type: "POST",
+			url: 'EduPagesD/ajax_edu_d',
+			data: {DeleteAttechment:'yes' , filename:file_name, session_name:session_name}, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+			success: function(result){
+				
+				if(result==1) {
+					$('#'+error_load).html('');
+					$('#'+cancelbtn).prop('disabled', false);
+					$('#'+btn).prop('disabled', false);
+					$('#'+file_id).prop('disabled', false);
+					$('#'+file_id).val('');
+					$('#load_img_data'+id).html('');
+				}else{
+				$('#'+error_load).show();
+				$('#'+error_load).html('<div class="alert alert-danger"><strong>Invalid Errors:<br></strong>'+result+'</div>');
+				$('#'+btn).prop('disabled', false);
+				
+				}
+				
+			  }
+		
+			  });
+			//}));
+		}
+				
+}
+
+
+
+function DeleteAttechmentFrom_id(id,error_load,file_name,file_id,lesson_id){
+			if(confirm("Are you sure want to remove this..?")){
+			$('#'+error_load).html('<div align="center">Removing<div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"></div></div>');
+			
+			
+			$.ajax({
+			type: "POST",
+			url: 'EduPagesD/ajax_edu_d',
+			data: {DeleteAttechmentFrom_id:'yes' , filename:file_name, lesson_id:lesson_id,file_id:file_id}, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+			success: function(result){
+				
+				if(result==1) {
+					$('#'+error_load).html('');
+					$('#'+file_id).prop('disabled', false);
+					$('#load_img_data'+id).html('');
+					
+				}else{
+				$('#'+error_load).show();
+				$('#'+error_load).html('<div class="alert alert-danger"><strong>Invalid Errors:<br></strong>'+result+'</div>');
+				
+				
+				}
+				
+			  }
+		
+			  });
+			//}));
+		}
+				
+}
+
+function DeleteAttechmentFrom_idDynamic(id,error_load,file_name,table_name,colum,where_colum,where_colum_id,file_id){
+			if(confirm("Are you sure want to remove this..?")){
+			$('#'+error_load).html('<div align="center">Removing<div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"></div></div>');
+			
+			
+			$.ajax({
+			type: "POST",
+			url: 'EduPagesD/ajax_edu_d',
+			data: {DeleteAttechmentFrom_idDynamic:'yes' , filename:file_name, table_name:table_name,colum:colum, where_colum:where_colum, where_colum_id:where_colum_id}, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+			success: function(result){
+				
+				if(result==1) {
+					$('#'+error_load).html('');
+					$('#'+file_id).prop('disabled', false);
+					$('#load_img_data'+id).html('');
+					
+				}else{
+				$('#'+error_load).show();
+				$('#'+error_load).html('<div class="alert alert-danger"><strong>Invalid Errors:<br></strong>'+result+'</div>');
+				
+				
+				}
+				
+			  }
+		
+			  });
+			//}));
+		}
+				
+}
+
+
+
+function SavingData(id,form,btn,ajaxpage,modal_id,load_after_saved,error_load,completed_message,data_load_to){
+			
+			$('#'+error_load).html('<div align="center">Please wait saving data..<div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"></div></div>');
+			var rizwan=document.getElementById(form);
+			
+		
+			$('#'+btn).prop('disabled', true);	
+			$.ajax({
+			type: "POST",
+			url: ajaxpage,
+			data: new FormData(rizwan), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+			contentType: false,       // The content type used when sending data to the server.
+			cache: false,             // To unable request pages to be cached
+			processData:false,      
+			success: function(result){
+				//alert(result);
+				
+				if(result==1) {
+				
+				$('#'+error_load).html('<div class="alert alert-success">'+completed_message+'</div>');
+				
+				if(load_after_saved=='redirect'){
+											window.location = data_load_to;
+										}else{
+				
+					setTimeout(function() { 
+										$("#"+modal_id).modal('toggle');
+										
+										
+											
+											$('#'+data_load_to).html('<div align="center">Please wait Loading... <div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"></div></div>');
+											
+											
+													$('#'+data_load_to).load(load_after_saved);
+													
+											
+											}, 1000);
+										
+										}
+					
+					
+				}else{
+				$('#'+error_load).show();
+				$('#'+error_load).html('<div class="alert alert-danger"><strong>Invalid Errors:<br></strong>'+result+'</div>');
+				$('#'+btn).prop('disabled', false);
+				
+				}
+				
+			  }
+		
+			  });
+			//}));
+		
+				
+}
+
+function OpenWindURL(url,width,height) {
+	popupWindow = window.open(
+		url,'popUpWindow','height='+height+',width='+width+',left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,location=no,directories=no,status=yes')
+}

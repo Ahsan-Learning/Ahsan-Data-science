@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://nanodegreeclub.com/Dashboard/Quiz-Exam -->
+<html lang="en" class="wf-poppins-n3-active wf-poppins-n4-active wf-poppins-n5-active wf-poppins-n6-active wf-poppins-n7-active wf-roboto-n3-active wf-roboto-n4-active wf-roboto-n5-active wf-roboto-n6-active wf-roboto-n7-active wf-active"><script id="allow-copy_script">(function agent() {
+    let unlock = false
+    document.addEventListener('allow_copy', (event) => {
+      unlock = event.detail.unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = (e) => {
+      if (unlock) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach((evt) => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()</script><!-- begin::Head --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>Quiz and Exam</title>
+		<meta name="description" content="Static table examples">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+		
+<!--begin::Web font -->
+		<script src="./Quiz and Exam_files/webfont.js.download"></script>
+		<link rel="stylesheet" href="./Quiz and Exam_files/css" media="all"><script>
+          WebFont.load({
+            google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+          });
+		</script>
+		<!--end::Web font -->
+        <!--begin::Base Styles -->
+      
+        
+        
+		<link href="./Quiz and Exam_files/vendors.bundle.css" rel="stylesheet" type="text/css">
+                  <link href="./Quiz and Exam_files/style.bundle.css" rel="stylesheet" type="text/css">
+                
+		<link href="./Quiz and Exam_files/fullcalendar.bundle.css" rel="stylesheet" type="text/css">
+		<!--end::Page Vendors -->
+		
+		
+		
+		
+		<!--end::Base Styles -->
+		<link rel="shortcut icon" href="https://nanodegreeclub.com/Dashboard/assets/demo/default/media/img/logo/favicon.ico"><style type="text/css">span.im-caret {
+    -webkit-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        border-right-color: black;
+    }
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+@-webkit-keyframes blink {
+    from, to {
+        border-right-color: black;
+    }
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+span.im-static {
+    color: grey;
+}
+
+div.im-colormask {
+    display: inline-block;
+    border-style: inset;
+    border-width: 2px;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+div.im-colormask > input {
+    position: absolute;
+    display: inline-block;
+    background-color: transparent;
+    color: transparent;
+    -webkit-appearance: caret;
+    -moz-appearance: caret;
+    appearance: caret;
+    border-style: none;
+    left: 0; /*calculated*/
+}
+
+div.im-colormask > input:focus {
+    outline: none;
+}
+
+div.im-colormask > input::-moz-selection{
+    background: none;
+}
+
+div.im-colormask > input::selection{
+    background: none;
+}
+div.im-colormask > input::-moz-selection{
+    background: none;
+}
+
+div.im-colormask > div {
+    color: black;
+    display: inline-block;
+    width: 100px; /*calculated*/
+}</style><style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style><style type="text/css" id="nsc-disable-scroll-.modal.fade.show">.modal.fade.show{scrollbar-width: none !important} .modal.fade.show::-webkit-scrollbar{width: 0 !important; height: 0 !important}</style></head>
+	<!-- end::Head -->
+    <!-- end::Body -->
+	<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default modal-open" data-new-gr-c-s-check-loaded="14.997.0" data-gr-ext-installed="" cz-shortcut-listen="true" style="">
+		<!-- begin:: Page -->
+		<div class="m-grid m-grid--hor m-grid--root m-page">
+			<!-- BEGIN: Header -->
+						    		<header id="m_header" class="m-grid__item m-header" m-minimize-offset="200" m-minimize-mobile-offset="200" style="">
+				<div class="m-container m-container--fluid m-container--full-height">
+					<div class="m-stack m-stack--ver m-stack--desktop">
+						<!-- BEGIN: Brand -->
+						<div class="m-stack__item m-brand  m-brand--skin-dark ">
+							<div class="m-stack m-stack--ver m-stack--general">
+								<div class="m-stack__item m-stack__item--middle m-brand__logo">
+									<a href="https://nanodegreeclub.com/index" class="m-brand__logo-wrapper" style="color:#FFFFFF; font-size:16px">NDC										<!--<img alt="" src="assets/demo/default/media/img/logo/logo_default_dark.png"/>-->
+</a>
+								</div>
+								<div class="m-stack__item m-stack__item--middle m-brand__tools">
+									<!-- BEGIN: Left Aside Minimize Toggle -->
+									<a href="javascript:;" id="m_aside_left_minimize_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-desktop-inline-block 
+					 ">
+										<span></span>
+									</a>
+									<!-- END -->
+							<!-- BEGIN: Responsive Aside Left Menu Toggler -->
+									<a href="javascript:;" id="m_aside_left_offcanvas_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-tablet-and-mobile-inline-block">
+										<span></span>
+									</a>
+									<!-- END -->
+							<!-- BEGIN: Responsive Header Menu Toggler -->
+									<a id="m_aside_header_menu_mobile_toggle" href="javascript:;" class="m-brand__icon m-brand__toggler m--visible-tablet-and-mobile-inline-block">
+										<span></span>
+									</a>
+									<!-- END -->
+			<!-- BEGIN: Topbar Toggler -->
+									<a id="m_aside_header_topbar_mobile_toggle" href="javascript:;" class="m-brand__icon m--visible-tablet-and-mobile-inline-block">
+										<i class="flaticon-more"></i>
+									</a>
+									<!-- BEGIN: Topbar Toggler -->
+								</div>
+							</div>
+						</div>
+						<!-- END: Brand -->
+						<div class="m-stack__item m-stack__item--fluid m-header-head" id="m_header_nav">
+							<!-- BEGIN: Horizontal Menu -->
+							
+                            
+                            <button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-dark " id="m_aside_header_menu_mobile_close_btn">
+								<i class="la la-close"></i>
+							</button>
+							<div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-dark m-aside-header-menu-mobile--submenu-skin-dark ">
+								<ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
+									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1" aria-haspopup="true">
+										<a href="javascript:;" class="m-menu__link m-menu__toggle">
+											
+											<span class="m-menu__link-text" style="font-size:24px">
+												 Muhammad Ahsan Student Dashboard											</span>
+											
+										</a>
+									</li>
+                                   </ul> 	
+											
+                                      </div>
+							<!-- END: Horizontal Menu -->								<!-- BEGIN: Topbar -->
+							<div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general m-stack--fluid">
+								<div class="m-stack__item m-topbar__nav-wrapper">
+									<ul class="m-topbar__nav m-nav m-nav--inline">
+										<!--<li class="
+	m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" 
+	m-dropdown-toggle="click" id="m_quicksearch" m-quicksearch-mode="dropdown" m-dropdown-persistent="1">
+											<a href="#" class="m-nav__link m-dropdown__toggle">
+												<span class="m-nav__link-icon">
+													<i class="flaticon-search-1"></i>
+												</span>
+											</a>
+											<div class="m-dropdown__wrapper">
+												<span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
+												<div class="m-dropdown__inner ">
+													<div class="m-dropdown__header">
+														<form  class="m-list-search__form">
+															<div class="m-list-search__form-wrapper">
+																<span class="m-list-search__form-input-wrapper">
+																	<input id="m_quicksearch_input" autocomplete="off" type="text" name="q" class="m-list-search__form-input" value="" placeholder="Search...">
+																</span>
+																<span class="m-list-search__form-icon-close" id="m_quicksearch_close">
+																	<i class="la la-remove"></i>
+																</span>
+															</div>
+														</form>
+													</div>
+													<div class="m-dropdown__body">
+														<div class="m-dropdown__scrollable m-scrollable" data-scrollable="true" data-height="300" data-mobile-height="200">
+															<div class="m-dropdown__content"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>-->
+										<li class="m-nav__item m-topbar__notifications m-topbar__notifications--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-center 	m-dropdown--mobile-full-width" m-dropdown-toggle="click" m-dropdown-persistent="1" style="display:none">
+											<a href="https://nanodegreeclub.com/Dashboard/Quiz-Exam#" class="m-nav__link m-dropdown__toggle" id="m_topbar_notification_icon">
+												
+												<span class="m-nav__link-icon">
+                                                                                       
+													<i class="flaticon-music-2"></i>
+												</span>
+											</a>
+											<div class="m-dropdown__wrapper">
+												<span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
+												<div class="m-dropdown__inner">
+													<div class="m-dropdown__header m--align-center" style="background: url(assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
+														<span class="m-dropdown__header-title">
+															0 New
+														</span>
+														<span class="m-dropdown__header-subtitle">
+															 <a href="https://nanodegreeclub.com/Dashboard/NoticeBoard" style="color:#FFF">Notifications view all</a>
+														</span>
+													</div>
+													<div class="m-dropdown__body">
+														<div class="m-dropdown__content">
+															<ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand" role="tablist">
+																<li class="nav-item m-tabs__item">
+																	<a class="nav-link m-tabs__link active" data-toggle="tab" href="https://nanodegreeclub.com/Dashboard/Quiz-Exam#topbar_notifications_notifications" role="tab">
+																		New
+																	</a>
+																</li>
+																
+															</ul>
+
+                                                            
+															<div class="tab-content">
+																<div class="tab-pane active" id="topbar_notifications_notifications" role="tabpanel">
+																	<div class="m-scrollable m-scroller ps" data-scrollable="true" data-height="250" data-mobile-height="200" style="height: 250px; overflow: hidden;">
+																		<div class="m-list-timeline m-list-timeline--skin-light">
+																			<div class="m-list-timeline__items">
+                                                                            
+                       														
+                                                                                
+																			</div>
+																		</div>
+																	<div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+																</div>
+																
+                                                                												</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										
+										<li class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img  m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
+                                        
+                                                                                    
+                                            
+											<a href="https://nanodegreeclub.com/Dashboard/Quiz-Exam#" class="m-nav__link m-dropdown__toggle">
+												<span class="m-topbar__userpic">
+													<img src="./Quiz and Exam_files/profile.png" class="m--img-rounded m--marginless" alt="">
+													<!--
+													<span class="m-type m--bg-brand">
+														<span class="m--font-light">
+															S
+															<span>
+																<span>
+																	-->
+																</span>
+																<span class="m-topbar__username m--hide">
+																	Nick
+																</span>
+															</a>
+															<div class="m-dropdown__wrapper">
+																<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+																<div class="m-dropdown__inner">
+																	<div class="m-dropdown__header m--align-center" style="background: url(assets/app/media/img/misc/user_profile_bg.jpg); background-size: cover;">
+																		<div class="m-card-user m-card-user--skin-dark">
+																			<div class="m-card-user__pic">
+                                                                            
+											
+                                                                            
+																				<img src="./Quiz and Exam_files/profile.png" class="m--img-rounded m--marginless" alt="Profile" width="70" height="70">
+																				<!--
+																				<span class="m-type m-type--lg m--bg-danger">
+																					<span class="m--font-light">
+																						S
+																						<span>
+																							<span>
+																								-->
+																							</div>
+                                                <div class="m-card-user__details">
+                                                    <span class="m-card-user__name m--font-weight-500">
+                                                        Muhammad Ahsan                                                    </span>
+																								<a href="https://nanodegreeclub.com/Dashboard/Quiz-Exam" class="m-card-user__email m--font-weight-300 m-link">
+																																																	</a>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="m-dropdown__body">
+																						<div class="m-dropdown__content">
+																							<ul class="m-nav m-nav--skin-light">
+																								<li class="m-nav__section m--hide">
+																									<span class="m-nav__section-text">
+																										Section
+																									</span>
+																								</li>
+																								
+																								
+																								<li class="m-nav__separator m-nav__separator--fit"></li>
+																								<li class="m-nav__item">
+																									<a href="https://nanodegreeclub.com/logout" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
+																										Logout
+																									</a>
+																								</li>
+																							</ul>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</li>
+																		
+																	</ul>
+																</div>
+															</div>
+															<!-- END: Topbar -->
+														</div>
+													</div>
+												</div>
+											</header>
+                                            
+                                            <style>
+											input,select,textarea{ border:1px solid #0092dc !important }
+											</style>				<!-- END: Header -->		
+		<!-- begin::Body -->
+											<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+												<!-- BEGIN: Left Aside -->
+												<style>
+/*.m-aside-left.m-aside-left--skin-dark {
+    background-color: #999 !important;
+}
+*/
+.active_link{ color:#FFFFFF !important;}
+</style>
+	<button class="m-aside-left-close  m-aside-left-close--skin-dark " id="m_aside_left_close_btn">
+													<i class="la la-close"></i>
+												</button>
+												<div id="m_aside_left" class="m-grid__item m-aside-left m-aside-left--skin-light" style="">
+													<!-- BEGIN: Aside Menu -->
+	<div id="m_ver_menu" class="m-aside-menu m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark m-scroller ps" m-menu-vertical="1" m-menu-scrollable="1" m-menu-dropdown-timeout="500" style="position: relative; height: 740px; overflow: hidden;">
+														<ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
+															
+															<!-- 
+															<li class="m-menu__section ">
+																<h4 class="m-menu__section-text">
+																	Components
+																</h4>
+																<i class="m-menu__section-icon flaticon-more-v3"></i>
+															</li>
+															-->
+															
+															<li class="m-menu__item m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
+																<a href="https://nanodegreeclub.com/Dashboard/index" class="m-menu__link m-menu__toggle">
+																	<i class="m-menu__link-icon flaticon-line-graph"></i>
+																	<span class="m-menu__link-text">
+																	Dashboard
+																	</span>
+																	
+																</a>
+																
+															</li>
+															
+														
+
+														
+                                                        
+                                                        
+                	
+													
+                                                      <li class="m-menu__item m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
+																<a href="https://nanodegreeclub.com/Dashboard/Profile" class="m-menu__link m-menu__toggle">
+																	<i class="m-menu__link-icon flaticon-user"></i>
+																	<span class="m-menu__link-text">
+																	Profile
+																	</span>
+																	
+																</a>
+																
+															</li>
+                                                            
+                                                            		
+                                                  
+                                                     <li class="m-menu__item m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
+																<a href="javascript:;" class="m-menu__link m-menu__toggle">
+																	<i class="m-menu__link-icon flaticon-imac"></i>
+																	<span class="m-menu__link-text">
+																	My Lectures
+																	</span>
+																	
+																</a>
+																
+															</li>       
+													
+                                                    
+                                                     <li class="m-menu__item m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
+																<a href="https://nanodegreeclub.com/Dashboard/Quiz-Exam#" class="m-menu__link m-menu__toggle">
+																	<i class="m-menu__link-icon fa fa-money-bill-wave"></i>
+																	<span class="m-menu__link-text">
+																	My Subcription
+																	</span>
+																	
+																</a>
+																
+															</li> 		
+                                                            
+                                                            
+                                                             <li class="m-menu__item m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
+																<a href="https://nanodegreeclub.com/Dashboard/My-Attendence" class="m-menu__link m-menu__toggle">
+																	<i class="m-menu__link-icon flaticon-line-graph"></i>
+																	<span class="m-menu__link-text">
+																	My Attendance
+																	</span>
+																	
+																</a>
+																
+															</li> 		
+                                                            
+                                                            
+                                                            
+                                                             <li class="m-menu__item m-menu__item--submenu m-menu__item--open" aria-haspopup="true" m-menu-submenu-toggle="hover">
+																<a href="https://nanodegreeclub.com/Dashboard/Quiz-Exam" class="m-menu__link m-menu__toggle">
+																	<i class="m-menu__link-icon flaticon-line-graph"></i>
+																	<span class="m-menu__link-text">
+																	Quiz &amp; Exam
+																	</span>
+																	
+																</a>
+																
+															</li> 		
+                                                            
+														</ul>
+													<div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+													<!-- END: Aside Menu -->
+												</div>												<!-- END: Left Aside -->
+												<div class="m-grid__item m-grid__item--fluid m-wrapper">
+													<!-- BEGIN: Subheader -->
+													<div class="m-subheader ">
+														<div class="d-flex align-items-center">
+															<div class="mr-auto">
+																<h3 class="m-subheader__title m-subheader__title--separator">
+														Quiz and Exam
+																</h3>
+																<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+																	<li class="m-nav__item m-nav__item--home">
+																		<a href="https://nanodegreeclub.com/Dashboard/Quiz-Exam#" class="m-nav__link m-nav__link--icon">
+																			<i class="m-nav__link-icon la la-home"></i>
+																		</a>
+																	</li>
+																	
+																	
+																	<li class="m-nav__item">
+																		<a href="https://nanodegreeclub.com/Dashboard/Quiz-Exam" class="m-nav__link">
+																			<span class="m-nav__link-text">
+																				List																			</span>
+																		</a>
+																	</li>
+																</ul>
+															</div>
+															<div>
+																
+															</div>
+														</div>
+													</div>
+													<!-- END: Subheader -->
+                                                   
+           		
+                                                    
+													<div class="m-content m-portlet">
+                                                   
+                                                    
+                                                    
+                                                    	<div class="row">
+                                                        	
+                                                        	<div class="table-responsive" id="page_1">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-striped table-hover">
+  <tbody><tr>
+    <td width="3%"><strong>S.no.</strong></td>
+     
+     <td width="21%"><strong>Name </strong></td>
+   
+    <td width="20%"><strong>Start Date Time</strong></td>
+    <td width="12%"><strong>Questions</strong></td>
+    <td width="7%"><strong>Total Marks</strong></td>
+    <td width="11%"><strong>Total Obtain Marks</strong></td>
+    <td width="11%"><strong>Status</strong></td>
+    <td width="15%"><strong>Action</strong></td>
+  </tr>
+    
+  <tr>
+    <td>1</td>
+    <td>Data Science MCQs Test</td>
+    <td>28-Feb-2021 10:00 PM</td>
+    <td> 50</td>
+    
+    <td>100.00</td>
+    <td>27(54%)</td>
+    <td> <label class="m-badge m-badge--success m-badge--wide">Attended</label></td>
+    <td>
+     
+    
+    
+        <button type="button" id="start_btn1" class="btn btn-info" onclick="Open_model(&#39;basicModal&#39;,&#39;modalbody&#39;,&#39;EduPagesD/answer_sheet&#39;,&#39;1,1,,2&#39;,&#39;Answer Sheet: Data Science MCQs Test&#39;,&#39;exampleModalLabel&#39;,&#39;larg&#39;,1)" autocomplete="off">Answer Sheet</button>
+       
+       </td>
+  </tr>
+  
+  </tbody></table>
+
+
+<script type="text/javascript">
+	  $(document).ready(function(){	
+		
+		$('[data-toggle="m-tooltip"]').tooltip();
+		$('[data-toggle="m-tooltip"]').css( 'cursor', 'pointer' );
+			
+	 });
+	 
+</script></div>
+                                                    </div>
+                                              
+						</div>
+				   
+                                     
+                     
+			
+                        
+                        <!--begin::Modal-->
+<div class="modal fade show" id="basicModal" role="dialog" aria-labelledby="exampleModalLabel" style="display: block; padding-left: 17px;">
+  <div class="modal-dialog modal-lg" role="document" id="modal-size">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Answer Sheet: Data Science MCQs Test</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modalbody"><div class="table-responsive">
+<form action="https://nanodegreeclub.com/Dashboard/Quiz-Exam" method="post" id="Assign_forms_new">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-boredred">
+ 
+ <tbody><tr>
+   <td width="4%"><strong>S.no.</strong></td>
+    <td width="55%"><strong>Question</strong></td>
+    <td width="41%"><strong>Correct Answer</strong></td>
+    </tr>
+  
+      
+  
+  
+  
+  <tr>
+    <td width="4%">1</td>
+    <td width="55%">difference b/w tuple and list is:</td>
+    <td colspan="6">elements in list can be updated and elements in tuples can’t be updated</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">2</td>
+    <td width="55%">which of the following is a way to calculate min of an array:</td>
+    <td colspan="6">all of the above</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">3</td>
+    <td width="55%">which of the following reduce code length (i.e. reduce redundancy of code):</td>
+    <td colspan="6">function</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">4</td>
+    <td width="55%">which of the following code statement should be written if you want five random numbers in range b/w 0 and 10:</td>
+    <td colspan="6">np.random.randint(0,10,5)</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">5</td>
+    <td width="55%">which of the following code statement should be written if you want five random numbers in range b/w 0 and 10:</td>
+    <td colspan="6">np.random.randint(0,10,5)</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">6</td>
+    <td width="55%">Which of the following do not allow index by index mathematical calculation:</td>
+    <td colspan="6">list</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">7</td>
+    <td width="55%">In Reinforcement learning, an agent learns on the basis of:</td>
+    <td colspan="6"> A and C</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">8</td>
+    <td width="55%">Which form of missing value comes under IEEE standard for Floating Point  Representation?</td>
+    <td colspan="6">NaN</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">9</td>
+    <td width="55%">Optimization Algorithm works on cost function to find out:</td>
+    <td colspan="6">Global Minima</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">10</td>
+    <td width="55%">Standardization/Regularization is done in order to preserve our model  from:</td>
+    <td colspan="6">Option A and B both</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">11</td>
+    <td width="55%">Models for which model parameters can be brought to have a linear  relationship are called as:</td>
+    <td colspan="6">Generalized Linear Models</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">12</td>
+    <td width="55%">Models for which there is not a linear relationship between  parameters/weights are called as:</td>
+    <td colspan="6">Non Linear Models</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">13</td>
+    <td width="55%">Support Vector Machine is mainly used for:</td>
+    <td colspan="6">Classification</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">14</td>
+    <td width="55%">Which of the following statistical parameter justify to calculate when we have outliers in data: </td>
+    <td colspan="6">SD</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">15</td>
+    <td width="55%">Problem for which there are more than two classes for prediction is called:</td>
+    <td colspan="6">Multi Class Classification</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">16</td>
+    <td width="55%">Which of the following is correct for sample and population:</td>
+    <td colspan="6">sample is the subset of pop</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">17</td>
+    <td width="55%">KNN uses which formula to measure nearness of data objects?</td>
+    <td colspan="6">Distance</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">18</td>
+    <td width="55%">Which of the following plots can give us the option to show 4 quantities in a single plot: </td>
+    <td colspan="6">Pair plot</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">19</td>
+    <td width="55%">A function can contain: </td>
+    <td colspan="6"> both a and b</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">20</td>
+    <td width="55%">Changing value of K in KNN and then evaluating a model means?</td>
+    <td colspan="6">Hyperparameter Tuning</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">21</td>
+    <td width="55%"> Which of the following is a way to call a method in python:</td>
+    <td colspan="6">from both a and b, one after the after</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">22</td>
+    <td width="55%">In data cleaning which actions will you perform with your dataset:</td>
+    <td colspan="6"> all of the above</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">23</td>
+    <td width="55%">What does this Machine Learning Model Optimization mean?</td>
+    <td colspan="6">To reduce Cost Function</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">24</td>
+    <td width="55%">After importing a csv into python using pandas, the container in it reside is called: </td>
+    <td colspan="6"> dataframe</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">25</td>
+    <td width="55%">Which of the following field takes comparatively major time for human to perform:</td>
+    <td colspan="6"> cleaning and pre-processing</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">26</td>
+    <td width="55%">Technique with which we bring any image into matrix format to deal with  image related problems is called as:</td>
+    <td colspan="6">Image Processing</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">27</td>
+    <td width="55%">Which of the following command shows the summary statistics of a dataset:</td>
+    <td colspan="6">.describe</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">28</td>
+    <td width="55%">Which of the following mathematical statement is true in case of conditional Prob when events are independent:</td>
+    <td colspan="6"> both a and c</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">29</td>
+    <td width="55%">Which of the following is not an evaluation metric of a Regression problem</td>
+    <td colspan="6">Confusion Matrix</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">30</td>
+    <td width="55%">Which is the most famous Python Library for Machine Learning Problem?</td>
+    <td colspan="6">Scikit Learn</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">31</td>
+    <td width="55%">Which of the following statistical distribution has dependency of one event to another:</td>
+    <td colspan="6">condition probability</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">32</td>
+    <td width="55%">For Baye's rule our data should be:</td>
+    <td colspan="6">mutually exclusive </td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">33</td>
+    <td width="55%">Which technique is use to deal with Categorical Data Type in ML problems?</td>
+    <td colspan="6">Encoding</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">34</td>
+    <td width="55%">From given algorithms, which of the following Machine Learning algorithm is preferred to use when we have discrete output:</td>
+    <td colspan="6"> logistics regression</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">35</td>
+    <td width="55%">Which Machine Learning Algorithm doesn’t bring any parameter out of  learning?</td>
+    <td colspan="6">KNN</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">36</td>
+    <td width="55%">What is the name of technique in which we transform values within the range:</td>
+    <td colspan="6"> normalization</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">37</td>
+    <td width="55%">Which of the following is not a Data Science Step?</td>
+    <td colspan="6"> ETL Pipelining</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">38</td>
+    <td width="55%">Which Machine Learning category it is called when we have discrete output feature:</td>
+    <td colspan="6"> classification</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">39</td>
+    <td width="55%">Which Machine Learning category it is called when we have o/p feature is available to us:</td>
+    <td colspan="6">supervised</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">40</td>
+    <td width="55%">Which of the following is not an application for data science?</td>
+    <td colspan="6">Privacy Checker</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">41</td>
+    <td width="55%">In linear regression, how many values of intercept we have if there are 2 input features: </td>
+    <td colspan="6">1</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">42</td>
+    <td width="55%">in linear regression, how many values of slopes we have if there are 2 input features:</td>
+    <td colspan="6">3</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">43</td>
+    <td width="55%">Which of the following are the Data Sources in data science?</td>
+    <td colspan="6">Both A and B</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">44</td>
+    <td width="55%">Which of the following Machine Learning algorithm is based on straight line</td>
+    <td colspan="6">Linear reg</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">45</td>
+    <td width="55%">Which of the following is/are correct skill/skills for a Data Scientist?</td>
+    <td colspan="6">All of the above</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">46</td>
+    <td width="55%">This statistical distribution is called bell-shaped distribution: </td>
+    <td colspan="6">Normal</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">47</td>
+    <td width="55%">The tree sort of structure is made in which statistical topic:</td>
+    <td colspan="6">Baye's</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">48</td>
+    <td width="55%">The first step after data collection is:</td>
+    <td colspan="6">cleaning</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">49</td>
+    <td width="55%">Binning of values is done in this particular plot:</td>
+    <td colspan="6">histogram</td>
+    </tr>
+    
+  
+  
+  
+  <tr>
+    <td width="4%">50</td>
+    <td width="55%">3d plot can be mapped into 2d plot by using this plot:</td>
+    <td colspan="6">contour plot</td>
+    </tr>
+   
+</tbody></table>
+
+
+</form>
+</div>
+<div id="load_errrors"></div>
+<div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="adcancelbtn2">Close</button>
+      
+      </div>
+      
+      <script type="text/javascript">
+	  $(document).ready(function(){	
+			$('#ccat_id').select2();
+			$('#teacher_id').select2();
+			
+			$('.datepic').datepicker({
+			format: 'dd-mm-yyyy' }).on('changeDate', function(e){
+			$(this).datepicker('hide');
+		});
+		
+		
+	 });
+	 </script></div>
+      
+    </div>
+  </div>
+</div>
+<!--end::Modal-->
+<style>
+@media{ 
+.modal_neww{max-width:95% !important;
+  /*  margin: 1.75rem auto;
+	position:relative;
+	pointer-events: none;*/
+	
+	
+	}
+}
+</style>
+
+               <!--begin::Modal-->
+<div class="modal fade" id="Editmodal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" id="modal-size2">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modalbody2">
+       
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!--end::Modal-->
+
+
+
+ <!--begin::Modal-->
+<div class="modal fade" id="Editmodal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal_neww" role="document" id="modal-size2">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel3"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modalbody3">
+       
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!--end::Modal-->
+<style>
+@media{ 
+.modal_neww{max-width:95% !important;
+  /*  margin: 1.75rem auto;
+	position:relative;
+	pointer-events: none;*/
+	
+	
+	}
+}
+</style>
+						
+						<!--begin::Footer Script Scripts -->
+												<script src="./Quiz and Exam_files/vendors.bundle.js.download" type="text/javascript"></script>
+						<script src="./Quiz and Exam_files/scripts.bundle.js.download" type="text/javascript"></script>
+						
+						
+										
+										<!--end::Base Scripts -->   
+        <!--begin::Page Vendors -->
+										<script src="./Quiz and Exam_files/fullcalendar.bundle.js.download" type="text/javascript"></script>
+										<!--end::Page Vendors -->  
+        <!--begin::Page Snippets -->
+										<script src="./Quiz and Exam_files/dashboard.js.download" type="text/javascript"></script>
+                                        <script src="./Quiz and Exam_files/functions.js.download" type="text/javascript"></script>
+                                        
+                                       <!-- <script src="assets/demo/default/custom/components/base/blockui.js" type="text/javascript"></script>-->                   <link href="./Quiz and Exam_files/datatables.bundle.css" rel="stylesheet" type="text/css">
+                        
+                    
+                        
+                    
+                        
+                        
+		<script>
+		
+	$(document).ready(function(){ 
+		
+	$('#page_1').html('<div align="center">Please wait Loading... <div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"></div></div>');
+  	$('#page_1').load('EduPagesD/load_quiz_list');
+	
+	});
+function SaveANswer(id,lesson_id,btn,btn2,answer){
+		$('#'+btn).prop('disabled', true);
+		$('#'+btn2).prop('disabled', true);
+		$('#load_save_answer'+id).show();
+		$('#load_save_answer'+id).html('<div align="center">Saving...<img src="../images/spin.gif" /></div>');
+		$.ajax({
+			type: "POST",
+			url: "EduPagesD/ajax_edu_d",
+			data: {saveQuestionAnser:'yes' ,qid:id, lesson_id:lesson_id, answer:answer}, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+			
+			success: function(result){
+				//alert(result);
+				if(result==1){
+				
+				$('#'+btn).prop('disabled', false);
+				$('#'+btn2).prop('disabled', false);
+				$('#load_save_answer'+id).html('<div align="center" style="color:green;">Saved Successfull!!</div>');
+				$('#load_save_answer'+id).slideDown('slow').delay(2000).slideUp('slow');
+				}else{
+				
+				$('#load_img_data'+id).html('<div style="color:red;">'+result+'</div>');
+				$('#load_save_answer'+id).show();
+				}
+				
+			
+				
+               
+			  }
+		
+			  });
+			//}));
+		
+	
+	}
+
+function EndNow(url){
+	if(confirm("Are sure you want to end ?")){
+		
+		$('#qdata').html('<div align="center">Loading... <div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"></div></div>');
+		$('#qdata').load(url);
+		
+		
+	}
+}
+
+function testclose(){
+	
+	$("#basicModal").modal('toggle');
+	
+	$('#page_1').html('<div align="center">Please wait Loading... <div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"></div></div>');
+  	$('#page_1').load('EduPagesD/load_quiz_list');
+	
+	$(window).unbind();
+}
+
+
+function  Open_model_on_page(model_id,model_body_id,pageloading,id,modal_title,modal_titel_id,size,new_id){
+	if(confirm("Are sure you want to start Test / Exam ?")){
+	$("#start_btn"+new_id).hide();
+	
+	if(size=='larg'){
+	$("#modal-size").addClass('modal-lg');
+	}
+	$("#"+model_id).modal({
+        show: false,
+        backdrop: 'static',keyboard: false
+    });
+	
+	if(pageloading=='EduPages/Addlesson_questions_dtl'){  cid = $('#cousre_id').val(); id = cid+','+id; }// only in
+	if(pageloading=='EduPages/Addlesson'){  cid = $('#cousre_id').val(); id = cid+','+id; }// only in
+	if(pageloading=='EduPages/AddAssignment'){  cid = $('#cousre_id').val(); id = id+','+cid; }// only in
+	if(pageloading=='EduPages/AddTestPlan'){  cid = $('#cousre_id').val(); id = id+','+cid; }// only in
+	
+		
+		
+	
+	
+	$("#"+model_id).modal('toggle');
+	$("#"+modal_titel_id).html(modal_title);
+	$("#"+model_body_id).html('<div align="center"><div class="m-loader m-loader--primary" style="width: 30px; display: inline-block;"></div></div>');
+	$("#"+model_body_id).load(pageloading+'?id='+encodeURIComponent(id));
+	
+	//modal({backdrop: 'static', keyboard: false}) ; 
+	$(":input:first").focus();
+	
+	} 
+}
+function window_Open(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=500,width=950,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,location=no,directories=no,status=yes')
+}
+		</script>				<!--end::Footer Script -->
+						
+						
+					
+					<!-- end::Body -->
+				
+</div></div></div><div class="modal-backdrop fade show" style=""></div></body></html>
